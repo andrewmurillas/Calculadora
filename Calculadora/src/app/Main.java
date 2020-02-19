@@ -5,7 +5,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 public class Main extends Application {
 
@@ -15,17 +17,26 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Scene scene;
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/res/gui.fxml"));
-			scene = new Scene(root);
+			Scene scene = new Scene(root);
+			primaryStage.setTitle("Calculdora");
+			primaryStage.getIcons().add(new Image("/res/icon.png"));
+			primaryStage.setScene(scene);
 		} catch (NullPointerException e) {
-			scene = new Scene(new StackPane(), 400, 300);
+			Text errorMessage = new Text();
+			errorMessage.setText("Algo salio mal");
+
+			StackPane layout = new StackPane();
+			layout.getChildren().add(errorMessage);
+
+			Scene errorScene = new Scene(layout, 400, 300);
+			primaryStage.setTitle("Error");
+			primaryStage.setScene(errorScene);
+
 			e.printStackTrace();
 		}
 
-		primaryStage.setTitle("Calculadora");
-		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
 

@@ -14,13 +14,13 @@ public class Controller implements Initializable {
 
 	@FXML
 	TextField screen;
-//	@FXML
-//	Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight,
-//			buttonNine, buttonZero, buttonComa;
-//	@FXML
-//	JFXButton buttonPlus, buttonMinus, buttonEqual, buttonObelo, buttonConvertToNegative, buttonTimes;
-//	@FXML
-//	JFXButton buttonClear, buttonClearAll, buttonDelete;
+	@FXML
+	Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight,
+			buttonNine, buttonZero, buttonComa;
+	@FXML
+	JFXButton buttonPlus, buttonMinus, buttonEqual, buttonObelo, buttonConvertToNegative, buttonTimes;
+	@FXML
+	JFXButton buttonClear, buttonClearAll, buttonDelete;
 
 	String numberOnScreen = "";
 	int numberSetOne = 0;
